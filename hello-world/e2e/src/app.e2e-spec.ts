@@ -8,10 +8,13 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('hello-world app is running!');
-  });
+  const NB_TESTS = 10;
+  for (const [id, iter] of Array(NB_TESTS).entries()) {
+    it(`${id}: should display welcome message`, async () => {
+      await page.navigateTo();
+      expect(await page.getTitleText()).toEqual('hello-world app is running!');
+    });
+  }
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
