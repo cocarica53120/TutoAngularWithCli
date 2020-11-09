@@ -51,6 +51,7 @@ npm run e2e
 ### Using VScode debug
 
 #### Configuration of launch.json
+[Configure launch.json](https://medium.com/@ganeshsirsi/how-to-debug-protractor-tests-in-visual-studio-code-e945fc971a74)
 ```
 {
     "type": "node",
@@ -85,7 +86,7 @@ npm run test
 A brower must be launched after this command is launched (see picture below).
 
 ### Debug
-- Configuration is done in karma.config.js
+- Configuration is done in karma.config.js [Doc](https://karma-runner.github.io/1.0/config/configuration-file.html)
 - Debug is available using browser.
 
 In the browser, Go to http://localhost:9876, 

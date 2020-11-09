@@ -1,2 +1,47 @@
-<span>{{ title }} app is running!</span>
-<router-outlet></router-outlet>
+<h1>Property binding &| String interpolation</h1>
+<p>{{ title }} app is running!</p>
+<p [textContent]="title"></p>
+<img [src]="imageUrl" />
+<img src="{{ imageUrl }}" />
+
+<h1>Class binding</h1>
+<button class="btn btn-primary" [class.active]="isActive">Save</button>
+<button class="btn btn-primary" [class.active]="!isActive">Save</button>
+
+<h1>Style binding</h1>
+<button
+  class="btn btn-primary"
+  [style.background-color]="isActive ? 'red' : 'green'"
+>
+  Save
+</button>
+
+<h1>Event binding</h1>
+<div (click)="onDiv()">
+  <button (click)="onSave($event)">Save</button>
+</div>
+
+<h1>Event filtering binding</h1>
+<span>filter on keyup.enter</span>
+<input (keyup.enter)="onKeyUp($event)"/>
+<span>get value of #email (local variable in DOM)</span>
+<input #email (keyup.enter)="onKeyUpValue(email.value)"/>
+
+<h1>Two way binding</h1>
+<input [value]="tel" (keyup.enter)="tel = $event.target.value; onKeyUpTel()"/>// manually done
+<input [(ngModel)]="tel"/>// done by angular directive ngModel
+
+<h1>Pipes</h1>
+<p>See in Angular documentation for pipes and parameters.....</p>
+uppercase pipe => {{ course.title | uppercase }} <br/>
+number pipe => {{ course.students | number }} <br/>
+number pipe with parameters => {{ course.rating | number:'2.1-2' }} <br/>
+currency pipe => {{ course.price | currency:'AUD': true:'3.2-2' }} <br/>
+time pipe => {{ course.releaseDate | date:'dd/MM/yyyy'}} <br/>
+
+<h1>Custom Pipes</h1>
+default summary pipe (limit=50) => {{ text | summary}} <br/>
+parameterized summary pipe (limit=10) => {{ text | summary:10}} <br/>
+
+<h4>Instantiation of a component generated with Angular cli</h4>
+<app-course></app-course>
