@@ -18,6 +18,7 @@ export class AppComponent {
     releaseDate: new Date(2020, 1, 12)
   };
   text = 'A very long text , which is really toooooooooooooooooooooooooooooo lonnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnggggggggg';
+
   onDiv(): void {
     console.log('Div was clicked');
   }
@@ -38,4 +39,5 @@ export class AppComponent {
   onKeyUpTel(): void {
     console.log('Tel was pressed', this.tel);
   }
+
 }

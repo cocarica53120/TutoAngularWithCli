@@ -1,47 +1,69 @@
 <h1>Property binding &| String interpolation</h1>
+<div class="container">
+
 <p>{{ title }} app is running!</p>
 <p [textContent]="title"></p>
 <img [src]="imageUrl" />
 <img src="{{ imageUrl }}" />
+</div>
 
 <h1>Class binding</h1>
-<button class="btn btn-primary" [class.active]="isActive">Save</button>
+<div class="container">
+  <button class="btn btn-primary" [class.active]="isActive">Save</button>
 <button class="btn btn-primary" [class.active]="!isActive">Save</button>
+</div>
 
 <h1>Style binding</h1>
-<button
+<div class="container">
+  <button
   class="btn btn-primary"
   [style.background-color]="isActive ? 'red' : 'green'"
 >
   Save
 </button>
+</div>
 
 <h1>Event binding</h1>
-<div (click)="onDiv()">
+<div class="container">
+  <div (click)="onDiv()">
   <button (click)="onSave($event)">Save</button>
+</div>
 </div>
 
 <h1>Event filtering binding</h1>
-<span>filter on keyup.enter</span>
+<div class="container">
+  <span>filter on keyup.enter</span>
 <input (keyup.enter)="onKeyUp($event)"/>
 <span>get value of #email (local variable in DOM)</span>
 <input #email (keyup.enter)="onKeyUpValue(email.value)"/>
+</div>
 
 <h1>Two way binding</h1>
-<input [value]="tel" (keyup.enter)="tel = $event.target.value; onKeyUpTel()"/>// manually done
+<div class="container">
+  <input [value]="tel" (keyup.enter)="tel = $event.target.value; onKeyUpTel()"/>// manually done
 <input [(ngModel)]="tel"/>// done by angular directive ngModel
+</div>
 
 <h1>Pipes</h1>
-<p>See in Angular documentation for pipes and parameters.....</p>
+<div class="container">
+  <p>See in Angular documentation for pipes and parameters.....</p>
 uppercase pipe => {{ course.title | uppercase }} <br/>
 number pipe => {{ course.students | number }} <br/>
 number pipe with parameters => {{ course.rating | number:'2.1-2' }} <br/>
 currency pipe => {{ course.price | currency:'AUD': true:'3.2-2' }} <br/>
 time pipe => {{ course.releaseDate | date:'dd/MM/yyyy'}} <br/>
+</div>
 
 <h1>Custom Pipes</h1>
-default summary pipe (limit=50) => {{ text | summary}} <br/>
+<div class="container">
+  default summary pipe (limit=50) => {{ text | summary}} <br/>
 parameterized summary pipe (limit=10) => {{ text | summary:10}} <br/>
+</div>
 
-<h4>Instantiation of a component generated with Angular cli</h4>
-<app-course></app-course>
+<h1>Favorite icon component instantiation</h1>
+<p>It 's about class & event binding</p>
+<app-favorite></app-favorite>
+
+<h1>Title casing component instantiation</h1>
+<p>It 's about custom pipe</p>
+<app-title-casing></app-title-casing>

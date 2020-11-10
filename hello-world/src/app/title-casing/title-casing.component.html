@@ -1,0 +1,16 @@
+<div class="container">
+  <p> With local variable #box</p>
+  <p>Enter a sentence to transform </p>
+  <!-- Use of a local variable in html (#box) to do the job -->
+  <input #box type="text" name="" id="" (keyup)="sentence = box.value" />
+  <p>raw {{ box.value }}</p>
+  <p>standard uppercase: {{ box.value | uppercase }}</p>
+  <p>custom titleCasing: {{ box.value | titleCasing }}</p>
+</div>
+
+
+<div class="container">
+  <p> With ngModel </p>
+  <input [(ngModel)]="title"/> <br>
+  {{title | titleCasing}}
+</div>
