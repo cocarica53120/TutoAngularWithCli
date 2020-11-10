@@ -1,0 +1,12 @@
+<div class="container">
+  <h2>
+    <div class="panel panel-default">
+      <span
+        class="glyphicon glyphicon-heart"
+        [class.highlighted]="isActive"
+        (click)="onClick()"
+      ></span>
+      <span>{{ likesCount }}</span>
+    </div>
+  </h2>
+</div>

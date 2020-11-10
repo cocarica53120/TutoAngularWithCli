@@ -1,43 +1,50 @@
-import { Component } from '@angular/core';
+import { FavoriteChangedArgs } from './favorite/favorite.component';
+import { Component, OnInit } from '@angular/core';
+
+interface Tweet {
+  isLiked: boolean;
+  likesCount: number;
+  body: string;
+}
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'hello-world';
-  imageUrl = 'http://lorempixel.com/400/200';
-  isActive = false; // class binding
-  tel = '01234'; // 2 way binding
-  course = { // For pipes
-    title: 'The Angular course',
-    rating: 4.95785,
-    students: 258980,
-    price: 10.50,
-    releaseDate: new Date(2020, 1, 12)
+
+export class AppComponent implements OnInit {
+
+  post = {
+    title: 'Title',
+    isFavorite: true
   };
-  text = 'A very long text , which is really toooooooooooooooooooooooooooooo lonnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnggggggggg';
 
-  onDiv(): void {
-    console.log('Div was clicked');
+  nbTweeter = 3;
+  initLikeCount = 10;
+  likeClients = Array(this.nbTweeter);
+  tweet: Tweet = {
+    body: 'Here is the body of a tweet...',
+    likesCount: this.initLikeCount,
+    isLiked: false,
+  };
+
+  totalLikes = 0;
+  ngOnInit() {
+    this.totalLikes = this.initLikeCount * this.nbTweeter;
   }
 
-  onSave(event: any): void {
-    event.stopPropagation(); // To stop bubble propagation on outer div
-    console.log('Save was clicked', event.target);
+  onFavoriteChanged(eventArgs: FavoriteChangedArgs): void {
+    console.log('Favorite changed', eventArgs);
   }
 
-  onKeyUp(event: any): void {
-    console.log('ENTER was pressed', 'target is', event.target);
+  onLikesCount(event: any): void {
+    console.log('onLikesCount', event);
+    this.tweet.likesCount = event;
   }
-
-  onKeyUpValue(value: string): void {
-    console.log('ENTER was pressed', 'value is', value);
+  onChanged(change: boolean): void {
+    this.totalLikes += change ? 1 : -1;
+    console.log('onChanged', );
   }
-
-  onKeyUpTel(): void {
-    console.log('Tel was pressed', this.tel);
-  }
-
 }
