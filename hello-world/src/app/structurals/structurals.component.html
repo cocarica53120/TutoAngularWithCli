@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>If</h2>
+  <button (click)="onAdd()">Add</button>
+  <button (click)="onResetAll()">Reset All Courses</button>
+  <div *ngIf="courses.length > 0; then coursesList; else noCourses"></div>
+  <br />
+  <ng-template #coursesList> List of courses </ng-template>
+  <ng-template #noCourses> No Courses Yet </ng-template>
+</div>
+
+<div class="container">
+  <h2>For</h2>
+  <button (click)="onAdd()">Add</button>
+  <input type="text" name="" id="" [(ngModel)]="shift" />
+  <ul>
+    <li *ngFor="let course of courses; index as i; even as isEven">
+      <button (click)="onRemove(course)">Remove</button>
+      <button (click)="onChange(course)">Change</button>
+      {{ +shift + i }} - {{ course.name }} <span *ngIf="isEven"> (Even)</span>
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+  <h2>ngClass</h2>
+  <button (click)="toggle()">Toggle</button>
+  <h2 class="glyphicon"
+  [ngClass]="{
+    'glyphicon-star': isSelected,
+    'glyphicon-star-empty': !isSelected
+  }"
+  ></h2>
+</div>

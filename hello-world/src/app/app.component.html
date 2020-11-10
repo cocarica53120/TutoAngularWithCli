@@ -1,54 +1,59 @@
-<div class="container">
-  <h2>Like component</h2>
+<app-structurals></app-structurals>
 
-  <div *ngFor="let like of likeClients">
-    <app-like
-      [isActive]="tweet.isLiked"
-      [likesCount]="tweet.likesCount"
-      (hasChanged)="onChanged($event)"
-    >
-    </app-like>
+
+<div *ngIf="false">
+  <div class="container">
+    <h2>Like component</h2>
+
+    <div *ngFor="let like of likeClients">
+      <app-like
+        [isActive]="tweet.isLiked"
+        [likesCount]="tweet.likesCount"
+        (hasChanged)="onChanged($event)"
+      >
+      </app-like>
+    </div>
+    <h3>Total Likes: {{ totalLikes }}</h3>
+
+    <h2>Using interaction parent/child</h2>
+    <app-favorite
+      [is-favorite]="post.isFavorite"
+      (change)="onFavoriteChanged($event)"
+    ></app-favorite>
+
+    <h2>Using reusable components</h2>
+    <p>Instantiate app-bootstrap-panel without parameters => empty</p>
+    <app-bootstrap-panel></app-bootstrap-panel>
+
+    <p>
+      Using ngContent => Instantiate app-bootstrap-panel without
+      parameters(heading & body)
+    </p>
+    <br />
+    <p>=> Filled with the content using ngContent</p>
+    <app-bootstrap-panel>
+      <div class="heading">
+        <h6>Heading</h6>
+        <p>contents of Head</p>
+      </div>
+      <div class="body">
+        <h6>Body</h6>
+        <p>Some content....</p>
+      </div>
+    </app-bootstrap-panel>
+
+    <p>
+      Using ngContainer/ngContent => Instantiate app-bootstrap-panel without
+      parameters(heading & body)
+    </p>
+    <br />
+    <p>=> Filled with the content using ngContent</p>
+    <app-bootstrap-panel>
+      <ng-container class="heading">Heading</ng-container>
+      <div class="body">
+        <h6>Body</h6>
+        <p>Some content....</p>
+      </div>
+    </app-bootstrap-panel>
   </div>
-  <h3>Total Likes: {{ totalLikes }}</h3>
-
-  <h2>Using interaction parent/child</h2>
-  <app-favorite
-    [is-favorite]="post.isFavorite"
-    (change)="onFavoriteChanged($event)"
-  ></app-favorite>
-
-  <h2>Using reusable components</h2>
-  <p>Instantiate app-bootstrap-panel without parameters => empty</p>
-  <app-bootstrap-panel></app-bootstrap-panel>
-
-  <p>
-    Using ngContent => Instantiate app-bootstrap-panel without
-    parameters(heading & body)
-  </p>
-  <br />
-  <p>=> Filled with the content using ngContent</p>
-  <app-bootstrap-panel>
-    <div class="heading">
-      <h6>Heading</h6>
-      <p>contents of Head</p>
-    </div>
-    <div class="body">
-      <h6>Body</h6>
-      <p>Some content....</p>
-    </div>
-  </app-bootstrap-panel>
-
-  <p>
-    Using ngContainer/ngContent => Instantiate app-bootstrap-panel without
-    parameters(heading & body)
-  </p>
-  <br />
-  <p>=> Filled with the content using ngContent</p>
-  <app-bootstrap-panel>
-    <ng-container class="heading">Heading</ng-container>
-    <div class="body">
-      <h6>Body</h6>
-      <p>Some content....</p>
-    </div>
-  </app-bootstrap-panel>
 </div>

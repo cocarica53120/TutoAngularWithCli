@@ -11,6 +11,7 @@ import { TitleCasingComponent } from './title-casing/title-casing.component';
 import { TitleCasingPipe } from './title-casing.pipe';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { LikeComponent } from './like/like.component';
+import { StructuralsComponent } from './structurals/structurals.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LikeComponent } from './like/like.component';
     TitleCasingComponent,
     TitleCasingPipe,
     BootstrapPanelComponent,
-    LikeComponent
+    LikeComponent,
+    StructuralsComponent
   ],
   imports: [
     BrowserModule,

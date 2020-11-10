@@ -16,6 +16,8 @@ interface Tweet {
 
 export class AppComponent implements OnInit {
 
+  testIf = [];
+
   post = {
     title: 'Title',
     isFavorite: true
