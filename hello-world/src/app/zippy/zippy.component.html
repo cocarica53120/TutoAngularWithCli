@@ -1,0 +1,61 @@
+<div class="zippy">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{ title }}
+      <span
+        *ngIf="isExpanded"
+        class="glyphicon glyphicon-chevron-up"
+        (click)="onClick()"
+      ></span>
+      <span
+        *ngIf="!isExpanded"
+        class="glyphicon glyphicon-chevron-down"
+        (click)="onClick()"
+      ></span>
+    </div>
+    <div *ngIf="isExpanded" class="panel-body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="false">
+  <div *ngIf="class" ="container">
+    <div class="panel panel-default">
+      <div *ngIf="isExpanded" class="panel-heading">
+        <h3 class="panel-title">Panel title</h3>
+        <span class="glyphicon glyphicon-chevron-up" (click)="onClick()"></span>
+      </div>
+      <div *ngIf="isExpanded" class="panel-body">
+        <h4>Title 1</h4>
+        <p>My contents</p>
+        <h4>Title 2</h4>
+        <p>My contents</p>
+      </div>
+      <div *ngIf="!isExpanded">
+        <div class="panel-heading">
+          <h3 class="panel-title">Panel title</h3>
+          <span
+            class="glyphicon glyphicon-chevron-down"
+            (click)="onClick()"
+          ></span>
+        </div>
+        <div *ngIf="isExpanded" class="panel-body" hidden="true"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">Panel heading without title</div>
+      <div class="panel-body">Panel content</div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Panel title</h3>
+      </div>
+      <div class="panel-body">Panel content</div>
+    </div>
+  </div>
+</div>

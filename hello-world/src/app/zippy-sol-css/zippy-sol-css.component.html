@@ -1,0 +1,17 @@
+<div class="zippy">
+  <div class="zippy-heading" [class.expanded]="isExpanded" (click)="toggle()">
+    {{ title }}
+    <span
+      class="glyphicon"
+      [ngClass]="{
+        'glyphicon-chevron-up': isExpanded,
+        'glyphicon-chevron-down': !isExpanded
+      }"
+    ></span>
+  </div>
+  <div *ngIf="isExpanded" class="zippy-body">
+    <!-- Fill the body with the contents of instantiation of this component -->
+    <p><small>ng-content use here below</small></p>
+    <ng-content></ng-content>
+  </div>
+</div>

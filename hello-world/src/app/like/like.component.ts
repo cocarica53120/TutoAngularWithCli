@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class LikeComponent {
 
-  @Input('likesCount') likesCount: number;
   @Input('isActive') isActive: boolean;
+  @Input('likesCount') likesCount: number;
   @Output('hasChanged') hasChanged = new EventEmitter();
 
   onClick(): void {

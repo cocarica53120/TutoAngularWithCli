@@ -1,5 +1,21 @@
-<app-structurals></app-structurals>
+<div *ngIf="true">
+  <div class="container">
+    <app-zippy title="Shipping Details">
+      <!-- use of ng-content -->
+      <!-- The user of zippy put everything he wants zippy component displays in its body -->
+      <p>Shipping Details Contents</p>
+    </app-zippy>
+  </div>
 
+  <div class="container">
+    <app-zippy-sol-css title="Shipping Details (Css solution)">
+      <h1>Introduction</h1>
+      <p>Shipping Details Contents</p>
+    </app-zippy-sol-css>
+  </div>
+
+  <app-structurals></app-structurals>
+</div>
 
 <div *ngIf="false">
   <div class="container">

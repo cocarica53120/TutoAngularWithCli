@@ -12,6 +12,8 @@ import { TitleCasingPipe } from './title-casing.pipe';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { LikeComponent } from './like/like.component';
 import { StructuralsComponent } from './structurals/structurals.component';
+import { ZippyComponent } from './zippy/zippy.component';
+import { ZippySolCssComponent } from './zippy-sol-css/zippy-sol-css.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { StructuralsComponent } from './structurals/structurals.component';
     TitleCasingPipe,
     BootstrapPanelComponent,
     LikeComponent,
-    StructuralsComponent
+    StructuralsComponent,
+    ZippyComponent,
+    ZippySolCssComponent
   ],
   imports: [
     BrowserModule,
