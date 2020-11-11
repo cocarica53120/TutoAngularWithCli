@@ -14,6 +14,7 @@ import { LikeComponent } from './like/like.component';
 import { StructuralsComponent } from './structurals/structurals.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ZippySolCssComponent } from './zippy-sol-css/zippy-sol-css.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ZippySolCssComponent } from './zippy-sol-css/zippy-sol-css.component';
     LikeComponent,
     StructuralsComponent,
     ZippyComponent,
-    ZippySolCssComponent
+    ZippySolCssComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
