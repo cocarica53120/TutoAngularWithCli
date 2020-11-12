@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-contact-form',
@@ -17,6 +17,10 @@ export class ContactFormComponent {
 
   submit(value): void {
     console.log('subnmit', value);
+    this.isOpenChange.emit(false);
   }
+
+  @Input() isOpen = false;
+  @Output() isOpenChange = new EventEmitter();
 
 }

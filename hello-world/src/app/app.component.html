@@ -1,5 +1,6 @@
 <div *ngIf="true">
-<app-contact-form></app-contact-form>
+  <button (click)=openModal()>Open</button>
+<app-contact-form [(isOpen)]="isOpen"></app-contact-form>
 </div>
 
 

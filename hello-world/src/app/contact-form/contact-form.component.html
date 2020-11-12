@@ -1,4 +1,6 @@
-<form #f="ngForm" (ngSubmit)="submit(f)">
+
+
+<form #f="ngForm" (ngSubmit)="submit(f)" [ngStyle]="{'display': isOpen ? 'block' : 'none'}" >
   <div class="form-group">
     <label for="firstName">First Name</label
     ><!-- when clicking on label, focus is done on input with id=firstname (sans as for attribute)-->
@@ -36,7 +38,7 @@
       (change)="log(comment)"
       id="comment"
       cols="30"
-      rows="10"
+      rows="2"
       class="form-control"
     >
     </textarea>

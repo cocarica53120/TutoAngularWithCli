@@ -101,3 +101,13 @@ And debug, using breakpoints of the browser debugger.
 If modifications are done, in the code of application, tests are relaunched automatically.
 
 ![Browser Karma](docs/debugKarma.png)
+
+# Others examples
+
+Simple handmade management of Modal
+[Simple modals without third library](https://jasonwatmore.com/post/2019/07/12/angular-8-custom-modal-window-dialog-box)
+Bootstrap for Angular
+[ngbootstrap](https://ng-bootstrap.github.io/#/home)
+
+[Interesting site on Angular](https://codecraft.tv/courses/angular/components/lifecycle-hooks/)
+[ngModel explanation](https://wetry.tech/comprendre-le-ng-model/)

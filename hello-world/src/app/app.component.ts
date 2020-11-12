@@ -16,6 +16,8 @@ interface Tweet {
 
 export class AppComponent implements OnInit {
 
+  isOpen = false;
+
   testIf = [];
 
   post = {
@@ -48,5 +50,11 @@ export class AppComponent implements OnInit {
   onChanged(change: boolean): void {
     this.totalLikes += change ? 1 : -1;
     console.log('onChanged', );
+  }
+
+  openModal(): void {
+    console.log('openModal S0', this.isOpen);
+    this.isOpen = true;
+    console.log('openModal S1', this.isOpen);
   }
 }
