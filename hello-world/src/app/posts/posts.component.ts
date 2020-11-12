@@ -1,5 +1,8 @@
+import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+// With Http operations exported in PostService, Separation of Concerns is respected.
+// This component has only one responsability view and control
 
 @Component({
   selector: 'app-posts',
@@ -8,46 +11,37 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostsComponent implements OnInit {
   posts: any;
-  private url = 'https://jsonplaceholder.typicode.com/posts';
 
-  constructor(private http: HttpClient) { }
+  constructor(private service: PostService) {}
 
   ngOnInit() {
-    this.http.get(this.url).subscribe(
+    this.service.getPosts().subscribe(
       (next) => {
         console.log('next', next);
         this.posts = next;
       },
       (error) => console.log('error', error),
       () => console.log('complete')
-    );
-  }
+  );
+}
 
   createPost(input: HTMLInputElement): void {
     let post = { title: input.value };
-
-    this.http.post(this.url, JSON.stringify(post)).subscribe(next => {
-      post['userId'] = next['id'];
-      this.posts.splice(0, 0, post);// Put at the head of list
+    this.service.createPost(post).subscribe(response => {
+      post['userId'] = response['id'];
+      this.posts.splice(0, 0, post); // Put at the head of list
     });
   }
 
   updatePost(post: any): void {
-    // this.http.put(this.url, JSON.stringify(post))
-    this.http.patch(this.url + '/' + post.id, JSON.stringify({isRead: true}))
-    .subscribe(next => {
-      console.log('update result', next);
+    this.service.updatePost(post).subscribe(response => {
+      console.log('simulated update result', response);
     });
   }
 
   deletePost(post: any): void {
-    this.http.delete(this.url + '/' + post.id)
-    .subscribe(next => {
-      console.log('delete result', next);
+    this.service.deletePost(post.id).subscribe(response => {
       const index = this.posts.indexOf(post);
       this.posts.splice(index, 1);
     });
-  }
-
-
-}
+}}

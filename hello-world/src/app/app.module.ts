@@ -1,3 +1,4 @@
+import { PostService } from './services/post.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SummaryPipe } from './summary.pipe';
 import { BrowserModule } from '@angular/platform-browser';
@@ -41,6 +42,7 @@ import { PostsComponent } from './posts/posts.component';
     AppRoutingModule
   ],
   providers: [
+    PostService
   ],
   bootstrap: [AppComponent]
 })
