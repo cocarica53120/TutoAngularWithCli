@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { SummaryPipe } from './summary.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,7 @@ import { StructuralsComponent } from './structurals/structurals.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ZippySolCssComponent } from './zippy-sol-css/zippy-sol-css.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +31,17 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     StructuralsComponent,
     ZippyComponent,
     ZippySolCssComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

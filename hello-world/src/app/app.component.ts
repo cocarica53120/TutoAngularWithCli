@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
   };
 
   totalLikes = 0;
-  ngOnInit() {
+  ngOnInit(): void {
     this.totalLikes = this.initLikeCount * this.nbTweeter;
   }
 

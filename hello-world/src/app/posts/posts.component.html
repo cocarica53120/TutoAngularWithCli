@@ -1,0 +1,22 @@
+<input
+  (keyup.enter)="createPost(title)" #title
+ type="text" class="form-control" />
+
+<!-- Using bootstrap list -->
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let post of posts" #thisPost>
+    <!-- {{ post | json }} -->
+    <button class="btn btn-default btn-sm"
+      (click)="updatePost(post)"
+      > Update </button>
+    <button class="btn btn-default btn-sm"
+      (click)="deletePost(post)"
+      > Delete </button>
+    userId: {{ post.userId }} => title: {{ post.title }}
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let post of posts">
+    {{ post.userId }}:{{ post.title }}
+  </li>
+</ul>
